@@ -54,15 +54,15 @@ def _convert_deprecated(config):
             " The old value is still accepted for now, but consider updating your config file.",
             param)
 
-    if config["optimus"]["startup_mode"] == "intel":
+    if config["optimus"]["startup_mode"] in ["intel", "amd"]:
         _log_warning("startup_mode")
         config["optimus"]["startup_mode"] = "integrated"
 
-    if config["optimus"]["startup_auto_battery_mode"] == "intel":
+    if config["optimus"]["startup_auto_battery_mode"] in ["intel", "amd"]:
         _log_warning("startup_auto_battery_mode")
         config["optimus"]["startup_auto_battery_mode"] = "integrated"
 
-    if config["optimus"]["startup_auto_extpower_mode"] == "intel":
+    if config["optimus"]["startup_auto_extpower_mode"] in ["intel", "amd"]:
         _log_warning("startup_auto_extpower_mode")
         config["optimus"]["startup_auto_extpower_mode"] = "integrated"
 

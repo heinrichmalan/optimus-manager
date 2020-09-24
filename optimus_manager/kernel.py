@@ -100,7 +100,7 @@ def _nvidia_down(config):
 
 
 def _get_available_modules():
-    MODULES = ["nouveau", "bbswitch", "acpi_call", "nvidia", "nvidia_drm", "nvidia_modeset", "nvidia_uvm"]
+    MODULES = ["nouveau", "bbswitch", "acpi_call", "nvidia", "nvidia_drm", "nvidia_modeset", "nvidia_uvm", "i2c_nvidia_gpu"]
     return [module for module in MODULES if checks.is_module_available(module)]
 
 def _load_nvidia_modules(config, available_modules):
