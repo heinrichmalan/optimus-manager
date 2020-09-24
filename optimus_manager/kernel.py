@@ -184,6 +184,7 @@ def _unload_nvidia_modules(available_modules):
 
 def _unload_nouveau(available_modules):
     exec_bash("echo 0 > /sys/class/vtconsole/vtcon0/bind")
+    exec_bash("echo 0 > /sys/class/vtconsole/vtcon1/bind")
     _unload_modules(available_modules, ["nouveau"])
 
 def _try_unload_bbswitch(available_modules):
