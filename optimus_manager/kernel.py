@@ -180,7 +180,9 @@ def _wait_no_processes_on_nvidia():
 
 
 def _unload_nvidia_modules(available_modules):
-    _unload_modules(available_modules, ["nvidia_drm", "nvidia_modeset", "nvidia_uvm", "nvidia"])
+    exec_bash("echo 0 > /sys/class/vtconsole/vtcon0/bind")
+    exec_bash("echo 0 > /sys/class/vtconsole/vtcon1/bind")
+    _unload_modules(available_modules, ["i2c_nvidia_gpu", "nvidia_drm", "nvidia_modeset", "nvidia_uvm", "nvidia"])
 
 def _unload_nouveau(available_modules):
     exec_bash("echo 0 > /sys/class/vtconsole/vtcon0/bind")
